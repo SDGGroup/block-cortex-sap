@@ -1,5 +1,6 @@
 # Define the database connection to be used for this model.
-connection: ${CONNECTION_NAME}
+# connection: ${CONNECTION_NAME}
+connection: "cortex-target"
 
 # include all the views
 include: "/views/**/*.view"
@@ -32,7 +33,8 @@ named_value_format: Greek_Number_Format {
 }
 
 explore: data_intelligence_ar {
-sql_always_where: ${Client_ID} = "@{CLIENT}" ;;
+# sql_always_where: ${Client_ID} = "@{CLIENT}" ;;
+sql_always_where: ${Client_ID} = "100" ;;
 }
 
 explore: sales_orders {
@@ -183,6 +185,7 @@ explore: sales_orders {
           and (${sales_order_partner_function.item_posnr} is Null or ${sales_order_partner_function_header.item_posnr} = '000000');;
     }
 
-    sql_always_where: ${client_mandt}='{{ _user_attributes['client_id_rep'] }}' ;;
+    # sql_always_where: ${client_mandt}='{{ _user_attributes['client_id_rep'] }}' ;;
+    sql_always_where: ${client_mandt}="100" ;;
 
   }
