@@ -27,6 +27,11 @@ view: budget_test_data_gsheet {
     type: sum
     sql: ${TABLE}.forecast ;;
   }
+
+  dimension: budget_test_data_gsheet_country {
+    type: string
+    sql: ${TABLE}.country ;;
+  }
   #
   # dimension: lifetime_orders {
   #   description: "The total number of orders for each user"
