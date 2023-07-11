@@ -4,6 +4,7 @@ connection: "cortex-target"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/golden_copy_test.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -35,6 +36,10 @@ named_value_format: Greek_Number_Format {
 explore: data_intelligence_ar {
 # sql_always_where: ${Client_ID} = "@{CLIENT}" ;;
 sql_always_where: ${Client_ID} = "100" ;;
+}
+
+explore: vbak_golden_copy {
+  hidden: yes
 }
 
 explore: sales_orders {
